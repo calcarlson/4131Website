@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> My Contacts </title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="MyContacts.html">My Contacts</a></li>
+            <li><a href="MyWidgets.html">My Widgets</a></li>
+            <li><a href="MyForms.html">My Forms</a></li>
+        </ul>
+    </nav>
+    <h2>
+        My Contacts
+    </h2>
+    <div class="contactgrid">
+        <div class="contactone">
+            <table id="contacts">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Favorite Place</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id=hiyao class="contactrow">
+                        <td onmouseover="showBigPic(2)">Studio Ghibli<br><img src="../media/hiyaosmall.jpg" class="thumb" alt="hiyao"></td>
+                        <td>post@ghibli.jp</td>
+                        <td class="contactaddress">117 Pleasant St SE, Minneapolis, MN 55455</td>
+                        <td>+(977) 980-8409225</td>
+                        <td><a href="https://www.google.com/maps/place/Ghibli+Museum/@35.696238,139.5704317,15z/data=!4m2!3m1!1s0x0:0x4de155903f849205?sa=X&ved=2ahUKEwiNrMuAxZ3nAhU0B50JHW80CJ4Q_BIwFHoECBEQCw"> Ghibli Museum</a></td>
+                    </tr>
+                    <tr id=disney class="contactrow">
+                        <td onmouseover="showBigPic(3)">Walt Disney Animation<br><img src="../media/igersmall.jpg" class="thumb" alt="bob"></td>
+                        <td>Communications@Disney.com</td>
+                        <td class="contactaddress">Kenneth H. Keller Hall, 200 Union St SE, Minneapolis, MN 55455</td>
+                        <td>+1 (818) 560-1000</td>
+                        <td><a href="https://www.google.com/maps/place/Disney+Animation+Building/@34.1555974,-118.3252755,17z/data=!3m1!4b1!4m5!3m4!1s0x80dcd7da4a00e713:0xd75d8f51ee7fbe19!8m2!3d34.1555974!4d-118.3230868"> Disney Animation Building</a></td>
+                    </tr>
+                    <tr id=aardman class=contactrow>
+                        <td onmouseover="showBigPic(4)">Aardman Animations<br><img src="../media/petersmall.jpg" class="thumb" alt="peter"></td>
+                        <td>hello@aardman.com</td>
+                        <td class="contactaddress">300 Washington Ave SE, Minneapolis, MN 55455</td>
+                        <td>+44 117 984 8485</td>
+                        <td><a href="https://www.google.com/maps/place/Aardman+Animations/@51.4474042,-2.6100971,17z/data=!3m1!4b1!4m5!3m4!1s0x48718dcd8a529cd9:0x2855f93beb06f6f6!8m2!3d51.4474009!4d-2.6079084">Aardman Animations</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="contacttwo">
+            <img id="large" height="220" width="250" src="../media/haystacks.png" alt="Monet 1890"><br>
+            <button id="stop" onclick="stop()">Stop</button>
+            <button id="start" onclick="start()">Start</button>
+        </div>
+        <div id='panel_directions'>
+        </div>
+        <div id="map" class="contactthree"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGoiWYjykMCFszaDqlrnsmxKSIUwYScwg&libraries=places&callback=initMap" async defer></script>
+        <div class='contactfour'>
+            <div id="placelist">
+                <label for="places">Find:</label>
+                <select id="places" onchange="other_input()">
+					  <option value="restaurant">Restaurant</option>
+					  <option value="hospital">Hospital</option>
+					  <option value="gas_station">Gas Station</option>
+					  <option value="grocery_or_supermarket">Grocery or Supermarket</option>
+					  <option value="other">Other</option>
+					</select>
+            </div>
+            <div>
+                <br><input id='other_box' type="text" name="other" placeholder="other" disabled><br>
+            </div>
+            <div>
+                <br><label for="range">Within:</label>
+                <input type="number" id="range" name="range" min="100" max="1000" step="100" value="500">
+                <label for="range">meters</label>
+            </div>
+            <div>
+                <br><button id="places_button" type="button" onclick="place_changer()">Search</button>
+            </div>
+        </div>
+        <div class='contactfive'>
+            <div>
+                <label for="directions">Directions:</label>
+                <br><input id="directions" type="text" name="directions" placeholder="-- Enter an Address --">
+            </div>
+            <div>
+                <label id=navradio for="directions">Transit MODE:</label><br>
+                <input id=driving class="nav_rad" type="radio" name="nav_radio" value="DRIVING">
+                <label for="driving">Driving</label><br>
+                <input id=walking class="nav_rad" type="radio" name="nav_radio" value="WALKING">
+                <label for="walking">Walking</label><br>
+                <input id="transit" class="nav_rad" type="radio" name="nav_radio" value="TRANSIT">
+                <label for="transit">Transit</label><br>
+            </div>
+            <div>
+                <button id="go_button" type="button" onclick="getCurrentLocation()">Go</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../js/Contacts.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGoiWYjykMCFszaDqlrnsmxKSIUwYScwg&callback=initMap"></script>
+
+</html>

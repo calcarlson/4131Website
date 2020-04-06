@@ -1,0 +1,467 @@
+/*
+  __  __  __   __     ____    ___    _   _      _      _____    ____   _____   ____  
+ |  \/  | \ \ / /    / ___|  / _ \  | \ | |    / \    |_   _|  / ___| |_   _| / ___| 
+ | |\/| |  \ V /    | |     | | | | |  \| |   / _ \     | |   | |       | |   \___ \ 
+ | |  | |   | |     | |___  | |_| | | |\  |  / ___ \    | |   | |___    | |    ___) |
+ |_|  |_|   |_|      \____|  \___/  |_| \_| /_/   \_\   |_|    \____|   |_|   |____/ 
+                                                                                    
+*/
+
+
+/* MYCONTACTS */
+
+table {
+    width: 100%;
+    height: 250px;
+    border-collapse: separate;
+    border-spacing: 10px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+button {
+    background-color: rgb(210, 210, 210);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-family: Helvetica Neue, sans-serif;
+    font-size: medium;
+}
+
+button:focus {
+    outline: 0;
+    color: rgb(180, 180, 180);
+}
+
+#map {
+    height: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 5%;
+    border-radius: 10px;
+    margin-bottom: 3%;
+    border: 1px solid rgb(212, 212, 212);
+}
+
+.contactgrid {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    /* width: 80%; */
+    grid-gap: 10px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 80px;
+    column-gap: 20px;
+    margin-right: 80px;
+}
+
+.contactgrid>div {
+    text-align: center;
+    padding: 0px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+td .thumb {
+    position: relative;
+    display: none;
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+img {
+    border-radius: 10px;
+}
+
+.large {
+    border-radius: 10px;
+    height: 250px;
+    width: 250px;
+}
+
+#large:hover+#hoverfade {
+    opacity: 1.0;
+    z-index: 100;
+}
+
+td:hover .thumb {
+    position: relative;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.grid {
+    display: grid;
+    width: 80%;
+    height: 100%;
+    grid-gap: 10px;
+    background-color: rgb(230, 230, 230);
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid>div {
+    background-color: rgba(230, 230, 230, 0.8);
+    text-align: center;
+    justify-content: center;
+    padding: 0px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.contactone {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+}
+
+.contacttwo {
+    border-radius: 10px;
+    grid-column-start: 4;
+    grid-row-start: 1;
+    max-width: 250px;
+}
+
+#hoverfade {
+    opacity: 0.0;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+}
+
+#hover {
+    width: 80px;
+    height: 20px;
+    background-color: green;
+    margin-bottom: 15px;
+}
+
+.contactthree {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.contactfour {
+    grid-column-start: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: rgb(230, 230, 230);
+    padding-top: 10px;
+    font-family: helvetica Neue;
+    font-weight: 100;
+    max-width: 250px;
+}
+
+.contactfive {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    font-family: helvetica neue;
+    background-color: rgb(230, 230, 230);
+    font-weight: 100;
+    max-width: 250px;
+}
+
+table,
+td {
+    border: 1px solid grey;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    text-align: center;
+    float: none;
+    font-weight: 200;
+}
+
+th {
+    border: 1px solid grey;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    text-align: center;
+    float: none;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+tr {
+    color: black;
+    font-weight: 200;
+    font-size: 15px;
+    font-family: Helvetica Neue, sans-serif;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody {
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    font-family: Helvetica Neue, sans-serif;
+}
+
+a:link {
+    color: grey;
+    font-family: sans-serif;
+}
+
+a:visited {
+    color: rgb(172, 105, 105);
+    font-family: sans-serif;
+}
+
+a:hover {
+    color: rgb(53, 53, 122);
+    font-family: sans-serif;
+    border-radius: 0px 10px 10px;
+}
+
+ol {
+    list-style-type: none;
+}
+
+ul {
+    text-align: center;
+    list-style-type: none;
+    line-height: 40%;
+    margin: 0;
+    padding: 0;
+    width: 130px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 0px 10px 10px 10px;
+}
+
+li a {
+    display: block;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+li a:hover {
+    background-color: grey;
+    color: white;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    text-align: center;
+    color: grey;
+    font-weight: 100;
+    font-size: 60pt;
+    font-family: Helvetica Neue, sans-serif
+}
+
+input[type=submit] {
+    background-color: rgb(255, 255, 255);
+    color: rgb(180, 180, 180);
+}
+
+#nav_radio {
+    font-family: Helvetica Neue, sans-serif;
+    position: relative;
+    left: 250px;
+    bottom: 77px;
+}
+
+.placelist {
+    font-family: Helvetica Neue, sans-serif;
+    height: 250px;
+    width: 250px;
+    font-size: small;
+    font-weight: 100;
+}
+
+.directions {
+    font-weight: 100;
+    height: 500px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.places {
+    font-weight: 100;
+}
+
+#panel_directions {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    overflow: scroll;
+    max-height: 500px;
+}
+
+
+/* 
+  __  __  __   __    _____    ___    ____    __  __   ____  
+ |  \/  | \ \ / /   |  ___|  / _ \  |  _ \  |  \/  | / ___| 
+ | |\/| |  \ V /    | |_    | | | | | |_) | | |\/| | \___ \ 
+ | |  | |   | |     |  _|   | |_| | |  _ <  | |  | |  ___) |
+ |_|  |_|   |_|     |_|      \___/  |_| \_\ |_|  |_| |____/ 
+
+ */
+
+
+/* MYFORMS */
+
+#formsMap {
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+    margin-bottom: 3%;
+    border: 1px solid rgb(212, 212, 212);
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.formwrap {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Helvetica Neue, sans-serif;
+    font-weight: 100;
+}
+
+form {
+    font-weight: 100;
+    color: grey;
+    font-family: Helvetica Neue, sans-serif;
+}
+
+
+/* MYFORMS */
+
+.formgrid {
+    display: grid;
+    width: 80%;
+    grid-gap: 0px;
+    border-radius: 10px;
+    justify-content: center;
+    margin-left: auto;
+    column-gap: 10px;
+    margin-right: auto;
+}
+
+.formgrid>div {
+    text-align: center;
+    padding: 0px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.formone {
+    margin-left: 10%;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+input[type=submit] {
+    font-family: Helvetica Neue, sans-serif;
+    font-weight: 100;
+}
+
+.formtwo {
+    margin-left: 10%;
+    border-radius: 10px;
+    grid-column-start: 2;
+    width: 800px;
+    height: 400px;
+}
+
+
+/*
+  __  __  __   __   __        __  ___   ____     ____   _____   _____   ____  
+ |  \/  | \ \ / /   \ \      / / |_ _| |  _ \   / ___| | ____| |_   _| / ___| 
+ | |\/| |  \ V /     \ \ /\ / /   | |  | | | | | |  _  |  _|     | |   \___ \ 
+ | |  | |   | |       \ V  V /    | |  | |_| | | |_| | | |___    | |    ___) |
+ |_|  |_|   |_|        \_/\_/    |___| |____/   \____| |_____|   |_|   |____/ 
+
+ */
+
+
+/* MYWIDGETS */
+
+iframe {
+    border-radius: 10px;
+    border: 0px;
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ytcontainer {
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 2;
+    position: relative;
+}
+
+.widgetone {
+    grid-column-start: 1;
+    border-radius: 10px;
+}
+
+.widgettwo {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-content: center;
+    align-content: center;
+}
+
+.widgetthree {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.widgetfour {
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+.container {
+    border-radius: 10px;
+    background-color: #ffffff;
+    align-content: center;
+    justify-content: center;
+    padding: 15%;
+    width: 60%;
+    height: 40px;
+    margin-left: 20px;
+}

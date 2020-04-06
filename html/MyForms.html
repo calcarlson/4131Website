@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>My Forms</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js/Forms.js"></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="MyContacts.html">My Contacts</a></li>
+            <li><a href="MyWidgets.html">My Widgets</a></li>
+            <li><a href="MyForms.html">My Forms</a></li>
+        </ul>
+    </nav>
+    <h2>My Forms</h2>
+    <div class="formgrid">
+        <div class="formone">
+            <form action="http://localhost:9001" method="POST">
+                Name:<br>
+                <input type="text" name="name" value="" required pattern="^(?=[A-Za-z0-9])([A-Za-z0-9\s]*)(?<=[A-Za-z0-9])$" title="Alphanumeric, no spaces at beginning or end">
+                <br> Email:<br>
+                <input type="email" name="email" value="" required>
+                <br>Address:<br>
+                <input type="text" id="address" name="address" placeholder="click map for address" required/>
+                <br> Favorite Place: <br>
+                <input type="text" name="place" value="" required pattern="^(?=[A-Za-z0-9])([A-Za-z0-9\s]*)(?<=[A-Za-z0-9])$" title="Alphanumeric, no spaces at beginning or end">
+                <br> URL: <br>
+                <input type="url" name="url" value="" required>
+
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div class="formtwo">
+            <div id='formsMap'></div>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGoiWYjykMCFszaDqlrnsmxKSIUwYScwg&libraries=places&callback=initMap">
+            </script>
+        </div>
+    </div>
+</body>
+
+
+</html>
